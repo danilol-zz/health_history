@@ -1,0 +1,10 @@
+development:
+  sessions:
+    default:
+      database: health_history_development
+
+test:
+  sessions:
+    default:
+      database: health_history_test
+
