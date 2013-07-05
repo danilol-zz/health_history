@@ -2,9 +2,25 @@ development:
   sessions:
     default:
       database: health_history_development
+      hosts:
+        - localhost:27017
+  options:
+    allow_dynamic_fields: false
+    identity_map_enabled: false
+    include_type_for_serialization: true
+    scope_overwrite_exception: true
+    raise_not_found_error: true
+    use_utc: true
 
 test:
   sessions:
     default:
       database: health_history_test
-
+      hosts:
+        - localhost:27017
+  options:
+    allow_dynamic_fields: false
+    identity_map_enabled: false
+    include_type_for_serialization: true
+    scope_overwrite_exception: true
+    raise_not_found_error: true

@@ -1,12 +1,14 @@
 
 ENV['RACK_ENV'] ||= 'development'
 
-$: << 'lib'
+root = File.expand_path(File.dirname(__FILE__))
+$: << root
+$: << File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 require 'bundler'
 Bundler.require
 
-#require 'config/environment'
+require 'config/environment'
 
 module HealthHistory
   Dir[File.join(File.dirname(__FILE__), 'lib', '*.rb')].each do |f|

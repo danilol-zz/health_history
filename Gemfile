@@ -1,12 +1,16 @@
 source 'https://rubygems.org'
-source 'http://gemserver.iba.com.br/'
 
 gem 'sinatra'
 gem 'mongoid'
-gem 'mongoid_migrations'
-gem 'pry'
-gem 'pry-nav'
-gem 'cucumber'
-gem 'rspec'
-gem 'rack-test'
-gem 'capybara'
+
+group :test, :development do
+  gem 'factory_girl'
+  gem 'database_cleaner'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'cucumber'
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'capybara'
+  gem 'mongoid-rspec'
+end
