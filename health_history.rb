@@ -19,6 +19,10 @@ module HealthHistory
     autoload File.basename(f, '.rb').camelize.to_sym, f
   end
 
+  module Helpers
+    Dir[File.join(File.dirname(__FILE__), 'lib', 'helpers/*.rb')].each { |f| require f }
+  end
+
   module Controllers
     Dir[File.join(File.dirname(__FILE__), 'lib', 'controllers/*.rb')].each do |f|
       autoload File.basename(f, '.rb').camelize.to_sym, f
@@ -28,7 +32,7 @@ module HealthHistory
   def self.route_map
     map = {
       '/'                => HealthHistory::App,
-      '/user'            => HealthHistory::Controllers::User
+      '/user'            => HealthHistory::Controllers::UserController
     }
     map
   end

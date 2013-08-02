@@ -11,6 +11,6 @@ group :test, :development do
   gem 'cucumber'
   gem 'rspec'
   gem 'rack-test'
-  gem 'capybara'
+  gem 'capybara-webkit'
   gem 'mongoid-rspec'
 end

@@ -4,8 +4,12 @@ class HealthHistory::App < Sinatra::Base
 
   get '/' do
     rels = [
-      { rel: 'hi', href: '/users/hi' },
+      { rel: 'user', href: '/user', type: 'application/health_history.user+json;charset=utf-8'},
     ]
+    { health_history: rels }.to_json
+
+    etag Digest::MD5.hexdigest rels.to_s
+
     { health_history: rels }.to_json
   end
 end
